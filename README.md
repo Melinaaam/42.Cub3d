@@ -1,11 +1,14 @@
 # Cub3d : Our first RayCaster with miniLibX
-Realise par Sarah Berton et Melina Motylewski
+_Projet realise par Sarah Berton et Melina Motylewski_
 
 Cub3D est un projet graphique en C inspiré du jeu culte Wolfenstein 3D, généralement considéré comme le grand-père des jeux de tir en trois dimensions et plus spécifiquement des jeux de tir à la première personne.  
 🎯 Notre projet vise à reproduire le jeu d'un point de vue technique. Pour la partie graphique, nous avons décidé de simuler une balade tranquille en ville… sans tirs et sans armes à feu ! ✌️
 
 ## Watch my demo : 
 [![Watch Me !](https://img.youtube.com/vi/F2-tP8NMRDc/0.jpg)](https://youtu.be/F2-tP8NMRDc)
+
+
+
 
 ## Étapes du parsing
 
