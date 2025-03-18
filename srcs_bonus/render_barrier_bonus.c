@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/12 17:35:19 by memotyle          #+#    #+#             */
-/*   Updated: 2025/03/14 17:24:21 by saberton         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:43:08 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int	init_column(t_game *game, t_player *pic)
 {
 	int	start;
 
-	start = (game->win_height - game->ray.lineheight) / 2;
+	start = (game->win_height - game->ray.lineheight) / 2 + 1;
 	if (start < 0)
 		start = 0;
 	game->choice_pic = choice_pic(game, pic);
@@ -106,7 +106,7 @@ static void	draw_column(t_game *game, int col, t_player *pic)
 		y++;
 		game->ray.text_pos += game->ray.text_step;
 	}
-	while (y < game->win_height - 1)
+	while (y < game->win_height)
 		y++;
 }
 

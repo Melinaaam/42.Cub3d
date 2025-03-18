@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:23:14 by saberton          #+#    #+#             */
-/*   Updated: 2025/03/14 16:37:26 by saberton         ###   ########.fr       */
+/*   Updated: 2025/03/14 17:48:34 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,34 @@ int	recup_map(char **file, t_game *game)
 	return (0);
 }
 
+static void	init_player(t_game *game, char dir)
+{
+	if (dir == 'N')
+	{
+		game->degree = 270;
+		game->dir = (t_player){.x = 0, .y = -1};
+		game->plane = (t_player){.x = 0.66, .y = 0};
+	}
+	else if (dir == 'S')
+	{
+		game->degree = 90;
+		game->dir = (t_player){.x = 0, .y = 1};
+		game->plane = (t_player){.x = -0.66, .y = 0};
+	}
+	else if (dir == 'W')
+	{
+		game->degree = 180;
+		game->dir = (t_player){.x = -1, .y = 0};
+		game->plane = (t_player){.x = 0, .y = -0.66};
+	}
+	else if (dir == 'E')
+	{
+		game->degree = 0;
+		game->dir = (t_player){.x = 1, .y = 0};
+		game->plane = (t_player){.x = 0, .y = 0.66};
+	}
+}
+
 static void	recup_player(char *map, t_game *game, int y)
 {
 	int	i;
@@ -78,36 +106,9 @@ static void	recup_player(char *map, t_game *game, int y)
 		{
 			game->player.y = y + 0.5;
 			game->player.x = i + 0.5;
-			if (map[i] == 'N')
-				game->degree = 270;
-			else if (map[i] == 'S')
-				game->degree = 90;
-			else if (map[i] == 'W')
-				game->degree = 180;
-			else if (map[i] == 'E')
-				game->degree = 0;
+			init_player(game, map[i]);
 			game->angle = (float)game->degree * M_PI / 180.0;
 			game->angle -= (0 - (2 * M_PI));
-			if (map[i] == 'N')
-			{
-				game->dir = (t_player){.x = 0, .y = -1};
-				game->plane = (t_player){.x = 0.66, .y = 0};
-			}
-			else if (map[i] == 'S')
-			{
-				game->dir = (t_player){.x = 0, .y = 1};
-				game->plane = (t_player){.x = -0.66, .y = 0};
-			}
-			else if (map[i] == 'W')
-			{
-				game->dir = (t_player){.x = -1, .y = 0};
-				game->plane = (t_player){.x = 0, .y = -0.66};
-			}
-			else if (map[i] == 'E')
-			{
-				game->dir = (t_player){.x = 1, .y = 0};
-				game->plane = (t_player){.x = 0, .y = 0.66};
-			}
 			break ;
 		}
 		i++;

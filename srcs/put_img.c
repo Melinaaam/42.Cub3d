@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:59:04 by saberton          #+#    #+#             */
-/*   Updated: 2025/03/14 17:23:24 by saberton         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:59:03 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static void	draw_column(t_game *game, int col, t_player *pic)
 	int	end;
 	int	y;
 
-	start = (game->win_height - game->ray.lineheight) / 2;
+	start = (game->win_height - game->ray.lineheight) / 2 + 1;
 	if (start < 0)
 		start = 0;
 	end = (game->win_height + game->ray.lineheight) / 2;

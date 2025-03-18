@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_access.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: memotyle <memotyle@student.42.fr>          +#+  +:+       +#+        */
+/*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:27:44 by saberton          #+#    #+#             */
-/*   Updated: 2025/03/14 15:34:36 by memotyle         ###   ########.fr       */
+/*   Updated: 2025/03/14 18:10:51 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	flood_fill(char **map, t_player cur, t_game *game)
 		|| cur.x > (int)ft_strlen(map[(int)cur.y]) || cur.x < 0)
 		return ;
 	if (map[(int)cur.y][(int)cur.x] == '1' || map[(int)cur.y][(int)cur.x] == 'S'
-		|| !map[(int)cur.y][(int)cur.x])
+		|| !map[(int)cur.y][(int)cur.x] || map[(int)cur.y][(int)cur.x] == ' ')
 		return ;
 	map[(int)cur.y][(int)cur.x] = 'S';
 	flood_fill(map, (t_player){cur.x - 1, cur.y}, game);
@@ -36,7 +36,9 @@ static int	surrounded_by_walls(t_game *game, int y, int x)
 		&& (game->check_map[y][x] != '1' || game->check_map[y][x] != ' '))
 		return (0);
 	if (!game->check_map[y - 1][x] || !game->check_map[y + 1][x]
-		|| !game->check_map[y][x - 1] || !game->check_map[y][x + 1])
+		|| !game->check_map[y][x - 1] || !game->check_map[y][x + 1]
+		|| game->check_map[y - 1][x] == ' ' || game->check_map[y + 1][x] == ' '
+		|| game->check_map[y][x - 1] == ' ' || game->check_map[y][x + 1] == ' ')
 		return (0);
 	return (1);
 }

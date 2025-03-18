@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 12:59:04 by saberton          #+#    #+#             */
-/*   Updated: 2025/03/14 17:19:29 by saberton         ###   ########.fr       */
+/*   Updated: 2025/03/17 10:43:15 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ static void	draw_column(t_game *game, int col, t_player *pic)
 	int	end;
 	int	y;
 
-	start = (game->win_height - game->ray.lineheight) / 2;
+	start = (game->win_height - game->ray.lineheight) / 2 + 1;
 	if (start < 0)
 		start = 0;
 	end = (game->win_height + game->ray.lineheight) / 2;
@@ -117,7 +117,7 @@ static void	draw_column(t_game *game, int col, t_player *pic)
 			get_pixel_color(game->choice_pic, pic->x, pic->y));
 		game->ray.text_pos += game->ray.text_step;
 	}
-	while (y < game->win_height - 1)
+	while (y < game->win_height)
 		put_pixel_to_img(game, col, y++, game->param->f_colors.dec);
 }
 

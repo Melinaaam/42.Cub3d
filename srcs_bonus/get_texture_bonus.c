@@ -6,7 +6,7 @@
 /*   By: saberton <saberton@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 17:23:47 by bertille          #+#    #+#             */
-/*   Updated: 2025/03/14 14:27:18 by saberton         ###   ########.fr       */
+/*   Updated: 2025/03/14 17:34:39 by saberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	map_texture2(t_game *game, t_param *param)
 		i++;
 	}
 	if (!param->we || !param->ea)
-		return (1);
+		return (write_err(RED "Error\nNeeded four param\n" RESET), 1);
 	if (!we || we > 1)
 		return (write_err(RED "Error\nChoose juste one WE param\n" RESET), 1);
 	if (!ea || ea > 1)
@@ -93,7 +93,7 @@ int	map_texture(t_game *game, t_param *param)
 		i++;
 	}
 	if (!param->no || !param->so)
-		return (1);
+		return (write_err(RED "Error\nNeeded four param\n" RESET), 1);
 	if (!no || no > 1)
 		return (write_err(RED "Error\nChoose juste one NO param\n" RESET), 1);
 	if (!so || so > 1)

@@ -1,12 +1,12 @@
-NO ./textures/saif_text/north.xpm
-SO ./textures/saif_text/south.xpm
-WE ./textures/saif_text/west.xpm
+NO ./textures/north.xpm
+SO ./textures/south.xpm
+WE ./textures/west.xpm
 
 
 
-EA ./textures/saif_text/east.xpm
-F 255,255,255
-C 225,30,255
+EA ./textures/east.xpm
+F 255,250,205
+C 175,238,238
 
         1111111111111111111111111
         1000000000110000000000001
