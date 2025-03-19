@@ -4,8 +4,9 @@ _Projet realise par Sarah Berton et Melina Motylewski_
 Cub3D est un projet graphique en C inspiré du jeu culte Wolfenstein 3D, généralement considéré comme le grand-père des jeux de tir en trois dimensions et plus spécifiquement des jeux de tir à la première personne.  
 🎯 Notre projet vise à reproduire le jeu d'un point de vue technique. Pour la partie graphique, nous avons décidé de simuler une balade tranquille en ville… sans tirs et sans armes à feu ! ✌️
 
-![Watch Me !](https://github.com/Melinaaam/42.Cub3d/blob/main/Demo/Cub3d.gif)
-
+<p align="center">
+  <img src="https://github.com/Melinaaam/42.Cub3d/blob/main/Demo/Cub3d.gif" alt="my demo" width="800">
+</p>
 
 ## Étapes du parsing
 
